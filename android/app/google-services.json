@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "137369441945",
+    "firebase_url": "https://face-attendence-33b83.firebaseio.com",
+    "project_id": "face-attendence-33b83",
+    "storage_bucket": "face-attendence-33b83.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:137369441945:android:5780317fa96dc176bf4a08",
+        "android_client_info": {
+          "package_name": "com.face_attendence"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "137369441945-tgiutv2sfotmi0dt62p4nk1i6ond6vpm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnvnTNXfqPTmedqf0BusctyhqOf7z5DHc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "137369441945-tgiutv2sfotmi0dt62p4nk1i6ond6vpm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:137369441945:android:f981e447d7d176ddbf4a08",
+        "android_client_info": {
+          "package_name": "com.uBookSharing"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "137369441945-tgiutv2sfotmi0dt62p4nk1i6ond6vpm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnvnTNXfqPTmedqf0BusctyhqOf7z5DHc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "137369441945-tgiutv2sfotmi0dt62p4nk1i6ond6vpm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
