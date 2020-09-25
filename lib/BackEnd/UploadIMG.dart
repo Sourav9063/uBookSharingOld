@@ -12,13 +12,13 @@ class UploadIMG {
 
   getUserPic() async {
     pickedImage =
-        await _picker.getImage(source: ImageSource.gallery, imageQuality: 50);
+        await _picker.getImage(source: ImageSource.gallery, imageQuality: 30);
     imageUser = File(pickedImage.path);
   }
 
   getBookPic() async {
     pickedImage =
-        await _picker.getImage(source: ImageSource.camera, imageQuality: 40);
+        await _picker.getImage(source: ImageSource.camera, imageQuality: 30);
     imageBook = File(pickedImage.path);
   }
 

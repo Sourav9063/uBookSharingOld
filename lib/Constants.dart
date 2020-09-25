@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 // import 'package:google_fonts/google_fonts.dart';
 
 const kSendButtonTextStyle = TextStyle(
@@ -6,6 +7,7 @@ const kSendButtonTextStyle = TextStyle(
   fontWeight: FontWeight.bold,
   fontSize: 18.0,
 );
+
 
 // const kMessageTextFieldDecoration = InputDecoration(
 
@@ -41,8 +43,7 @@ const kTextFieldDecoration = InputDecoration(
     borderRadius: BorderRadius.all(Radius.circular(30)),
     borderSide: BorderSide(width: 4.0),
   ),
-  hintText: 'Enter your email',
-  labelText: 'Email',
+ 
   contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
   // border: OutlineInputBorder(
   //   borderRadius: BorderRadius.all(Radius.circular(5.0)),
@@ -57,7 +58,4 @@ const kTextFieldDecoration = InputDecoration(
   ),
 );
 
-class UserLogInData {
-  static const String email = null;
-  static const String uid = null;
-}
+

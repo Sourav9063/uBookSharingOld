@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:uBookSharing/BackEnd/Datas.dart';
+// import 'package:uBookSharing/Constants.dart';
 import 'package:uBookSharing/Screens/LoginScreen.dart';
 import 'package:uBookSharing/Screens/Registration.dart';
+import 'package:uBookSharing/Screens/profile.dart';
 // import 'package:uBookSharing/Screens/profile.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -16,6 +18,14 @@ class _MyHomePageState extends State<MyHomePage> {
   // double animatedPicCont = -200;
   bool navSignIn = false;
   double animatedPicContleft = 00;
+  @override
+  void initState() {
+    
+    super.initState();
+
+    UserLogInData.updateUID();
+  }
+
   @override
   Widget build(BuildContext context) {
     CommonThings.size = MediaQuery.of(context).size;
@@ -35,8 +45,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) =>
-                            navSignIn ? LoginScreen() : RegScreen()));
+                        builder: (context) => navSignIn
+                            ? UserLogInData.uid == null
+                                ? LoginScreen()
+                                : UserProfile()
+                            : RegScreen()));
               },
               child: Image.asset(
                 "assets/img/bookSharingBlue.jpg",
