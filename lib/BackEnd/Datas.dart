@@ -3,7 +3,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class CommonThings {
   static Size size;
-  
 }
 
 class UserLogInData {
@@ -34,6 +33,7 @@ class UserProfileData {
   String phoneNum;
   String email;
   String address;
+  
 
   // Map<String, dynamic> userMapData;
 

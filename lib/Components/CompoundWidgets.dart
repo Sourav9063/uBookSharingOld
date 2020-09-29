@@ -9,8 +9,10 @@ class IconAccount extends StatelessWidget {
   const IconAccount({
     @required this.radious,
     Key key,
+    this.imglink,
   }) : super(key: key);
   final double radious;
+  final String imglink;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -28,17 +30,43 @@ class IconAccount extends StatelessWidget {
           ])),
       height: radious,
       width: radious,
-      child: Icon(
-        Icons.account_circle,
-        size: radious,
-        color: Colors.white,
-      ),
+      child: imglink == null
+          ? Icon(
+              Icons.account_circle,
+              size: radious,
+              color: Colors.white,
+            )
+          : Padding(
+              padding: const EdgeInsets.all(13.0),
+              child: ClipOval(
+                child: Image.network(
+                  imglink,
+                  loadingBuilder: (BuildContext context, Widget child,
+                      ImageChunkEvent loadingProgress) {
+                    if (loadingProgress == null) return child;
+                    return Center(
+                      child: CircularProgressIndicator(
+                        strokeWidth: 7,
+                        value: loadingProgress.expectedTotalBytes != null
+                            ? loadingProgress.cumulativeBytesLoaded /
+                                loadingProgress.expectedTotalBytes
+                            : null,
+                      ),
+                    );
+                  },
+                  fit: BoxFit.cover,
+                  height: radious - 8,
+                  width: radious - 8,
+                ),
+              ),
+            ),
     );
   }
 }
 
 class AnimetedGredian extends StatefulWidget {
-  AnimetedGredian({Key key, this.child, this.listColor, this.function}) : super(key: key);
+  AnimetedGredian({Key key, this.child, this.listColor, this.function})
+      : super(key: key);
   final Widget child;
   final List<Color> listColor;
   final Function function;
@@ -81,33 +109,34 @@ class _AnimetedGredianState extends State<AnimetedGredian> {
       }
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
-        duration: Duration(milliseconds: 700),
-        curve: Curves.fastOutSlowIn,
-        height: CommonThings.size.height,
-        width: CommonThings.size.width,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: widget.listColor == null
-                ? [
-                    Color(0xff000000),
-                    Color(0xff14213D),
-                    rand % 2 == 1 ? Colors.indigo : Colors.red,
+      duration: Duration(milliseconds: 700),
+      curve: Curves.fastOutSlowIn,
+      height: CommonThings.size.height,
+      width: CommonThings.size.width,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: widget.listColor == null
+              ? [
+                  Color(0xff000000),
+                  Color(0xff14213D),
+                  rand % 2 == 1 ? Colors.indigo : Colors.red,
 
-                    Color(0xffFCA311),
+                  Color(0xffFCA311),
 
-                    // Colors.white
-                  ]
-                : widget.listColor,
-            begin: alb,
-            end: ale,
-          ),
+                  // Colors.white
+                ]
+              : widget.listColor,
+          begin: alb,
+          end: ale,
         ),
-        child: widget.child,
-        onEnd: widget.function,
-        );
+      ),
+      child: widget.child,
+      onEnd: widget.function,
+    );
   }
 }
 

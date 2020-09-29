@@ -191,7 +191,7 @@ class _RegScreenState extends State<RegScreen> {
                         // right: CommonThings.size.width * .05,
                         // top: 200,
                         child: IconAccount(
-                          radious: 150,
+                          radious: CommonThings.size.width * .40,
                         ),
                       ),
                     ),
